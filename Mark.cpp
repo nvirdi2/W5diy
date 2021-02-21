@@ -35,7 +35,7 @@ namespace sdds
 
 		else
 		{
-			marks = -1;
+			marks = isInvalid();
 		}
 	}
 	
