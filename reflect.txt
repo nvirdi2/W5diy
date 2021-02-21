@@ -1,0 +1,19 @@
+Navdeep Virdi
+166485193
+Feb 21st, 2021
+nvirdi2@myseneca.ca
+
+Reflection
+This workshop was focus on different types of operators and how they can be used during the program that was
+being created. To start, binary member operators are used for overloading. This concept of how to declare them 
+was very easy since it was very similar to how we declare functions, just with a symbol in between. For example, 
+in the "Account.h" file one of the binary member operators such as, "Account& operator <<(Account& account);". 
+It was not too hard to create a function on the inside of it too since it was just like the time when I create a normal
+, not an overload function. To continue, in the lab there was a unary function that was created. This was a little
+easy, just to understand what it does. I understood that it takes one argument, however, it was easier to create because 
+it was just one argument being returned. In this lab and DIY, the was type conversion operators and they were used convert 
+to different types like int, double, from a bool. Then lastly, we had helper operators that were in between classes and
+had types. This was probably the concept I had to revisit many times throughout this whole workshop just because I 
+needed to understand the concept well and not just type it all out. The creation of the helpers was easy but understanding
+why there are there and what they do was probably the hardest concept of this whole workshop. Yet, this was not too hard compared
+to other labs I had before in this class. 
