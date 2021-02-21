@@ -141,7 +141,7 @@ namespace sdds
 	
 	Mark::operator int() 
 	{
-		if (marks < 0)
+		if (isInvalid())
 		{
 			return 0;
 		}
