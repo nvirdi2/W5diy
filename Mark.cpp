@@ -12,10 +12,12 @@
 using namespace std;
 namespace sdds 
 {
+	
+	
 	bool Mark::isInvalid()    //if mark is under 0 than there is an invalid state
-    { 
-        return (marks < 0);
-    }
+	{ 
+        	return (marks < 0);
+    	}
 
 
 	Mark::Mark() 
@@ -54,7 +56,16 @@ namespace sdds
 		} return *this;
 	}
 
-
+	
+	int& operator+=(int& l, Mark& Mark) 
+	{
+		if (int(Mark) >= 0) 
+		{
+			l += int(Mark);
+		} return l;
+	}
+	
+	
 	Mark& Mark::operator=(int x) 
 	{
 		if (x >= 0 && x <= 100) 
@@ -65,15 +76,6 @@ namespace sdds
 		{
 			marks = 0;
 		} return *this;
-	}
-
-
-	int& operator+=(int& l, Mark& Mark) 
-	{
-		if (int(Mark) >= 0) 
-		{
-			l += int(Mark);
-		} return l;
 	}
 	
 	
