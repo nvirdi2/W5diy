@@ -38,7 +38,44 @@ namespace sdds
 	}
 
 
-	Mark::operator int() 
+	Mark& Mark::operator+=(int i) 
+	{
+		if (i > 0 && marks + i <= 100)
+		{
+			if (marks != -1)
+			{
+				marks += i;
+			}
+		}
+
+		else
+		{
+			marks = 0;
+		} return *this;
+	}
+
+
+	Mark& Mark::operator=(int x) 
+	{
+		if (x >= 0 && x <= 100) 
+		{
+			marks = x;
+		}
+		else 
+		{
+			marks = 0;
+		} return *this;
+	}
+
+
+	int& operator+=(int& l, Mark& Mark) 
+	{
+		if (int(Mark) != -1) 
+		{
+			l += int(Mark);
+		} return l;
+	}
+Mark::operator int() 
 	{
 		if (marks == -1)
 		{
@@ -109,45 +146,6 @@ namespace sdds
 				return 'F';	
 			} 
 		} return 'X';
-	}
-
-
-	Mark& Mark::operator+=(int i) 
-	{
-		if (i > 0 && marks + i <= 100)
-		{
-			if (marks != -1)
-			{
-				marks += i;
-			}
-		}
-
-		else
-		{
-			marks = 0;
-		} return *this;
-	}
-
-
-	Mark& Mark::operator=(int x) 
-	{
-		if (x >= 0 && x <= 100) 
-		{
-			marks = x;
-		}
-		else 
-		{
-			marks = 0;
-		} return *this;
-	}
-
-
-	int& operator+=(int& l, Mark& Mark) 
-	{
-		if (int(Mark) != -1) 
-		{
-			l += int(Mark);
-		} return l;
 	}
 
 }
