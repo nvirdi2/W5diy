@@ -13,9 +13,9 @@ using namespace std;
 namespace sdds 
 {
 	bool Mark::isInvalid()    //if mark is under 0 than there is an invalid state
-    	{ 
-        	return (marks < 0);
-    	}
+    { 
+        return (marks < 0);
+    }
 
 
 	Mark::Mark() 
@@ -37,47 +37,20 @@ namespace sdds
 		}
 	}
 
-	//binary member operator
 
-	Mark& Mark::operator+=(int i) 
+	Mark::operator int() 
 	{
-		if (i > 0 && marks + i <= 100)
+		if (marks < 0)
 		{
-			if (marks != -1)
-			{
-				marks += i;
-			}
+			return 0;
 		}
 
 		else
 		{
-			marks = 0;
-		} return *this;
+			return marks;
+		} 
 	}
 
-
-	Mark& Mark::operator=(int x) 
-	{
-		if (x >= 0 && x <= 100) 
-		{
-			marks = x;
-		}
-		else 
-		{
-			marks = 0;
-		} return *this;
-	}
-
-
-	int& operator+=(int& l, Mark& Mark) 
-	{
-		if (int(Mark) != -1) 
-		{
-			l += int(Mark);
-		} return l;
-	}
-
-	//type conversion operator
 
 	Mark::operator double() 
 	{
@@ -137,19 +110,44 @@ namespace sdds
 			} 
 		} return 'X';
 	}
-	
-		
-	Mark::operator int() 
+
+
+	Mark& Mark::operator+=(int i) 
 	{
-		if (marks < 0)
+		if (i > 0 && marks + i <= 100)
 		{
-			return 0;
+			if (marks >= 0)
+			{
+				marks += i;
+			}
 		}
 
 		else
 		{
-			return marks;
-		} 
+			marks = 0;
+		} return *this;
+	}
+
+
+	Mark& Mark::operator=(int x) 
+	{
+		if (x >= 0 && x <= 100) 
+		{
+			marks = x;
+		}
+		else 
+		{
+			marks = 0;
+		} return *this;
+	}
+
+
+	int& operator+=(int& l, Mark& Mark) 
+	{
+		if (int(Mark) >= 0) 
+		{
+			l += int(Mark);
+		} return l;
 	}
 
 }
