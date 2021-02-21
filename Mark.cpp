@@ -13,9 +13,9 @@ using namespace std;
 namespace sdds 
 {
 	bool Mark::isInvalid()    //if mark is under 0 than there is an invalid state
-    { 
-        return (marks < 0);
-    }
+    	{ 
+        	return (marks < 0);
+    	}
 
 
 	Mark::Mark() 
@@ -37,6 +37,7 @@ namespace sdds
 		}
 	}
 
+	//binary member operator
 
 	Mark& Mark::operator+=(int i) 
 	{
@@ -75,19 +76,8 @@ namespace sdds
 			l += int(Mark);
 		} return l;
 	}
-Mark::operator int() 
-	{
-		if (marks == -1)
-		{
-			return 0;
-		}
 
-		else
-		{
-			return marks;
-		} 
-	}
-
+	//type conversion operator
 
 	Mark::operator double() 
 	{
@@ -146,6 +136,20 @@ Mark::operator int()
 				return 'F';	
 			} 
 		} return 'X';
+	}
+	
+		
+	Mark::operator int() 
+	{
+		if (marks < 0)
+		{
+			return 0;
+		}
+
+		else
+		{
+			return marks;
+		} 
 	}
 
 }
