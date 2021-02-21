@@ -1,3 +1,9 @@
+// Name: Navdeep Virdi
+// Seneca email: nvirdi2@myseneca.ca
+// Student ID: 166485193
+// Date: Feb 21th, 2021
+
+//I have done all the coding by myself and only copied the code that my professor provided to complete my workshops and assignments.
 
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
