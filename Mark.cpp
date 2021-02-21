@@ -12,78 +12,49 @@
 using namespace std;
 namespace sdds 
 {
-
-
-	bool Mark::isInvalid()
-    { 
-        return (marks < 0);
-    }
+	
+	bool Mark::isInvalid()    //if mark is under 0 than there is an invalid state
+    	{ 
+        	return (marks < 0);
+    	}
 
 
 	void Mark::setEmpty() 
 	{
-      marks = 0;
+		marks = 0;
    	}
 
-
+	
 	Mark::Mark() 
 	{
 		setEmpty();
 	}
 
-
-	Mark::Mark(int Mark) 
+	
+	Mark::Mark(int Marks) 
 	{
 		setEmpty();
-		if (Mark >= 0 && Mark <= 100 )
-		{
-			marks = Mark;
-		}
+			if (Marks >= 0 && Marks <= 100 )
+			{
+				marks = Marks;
+			}
 	}
 
-
+	
 	Mark::operator int() 
 	{
 		if (isInvalid())
 		{
 			return 0;
 		}
-		
+
 		else
 		{	
 			return marks;
 		}
 	}
 
-
-	Mark::operator double() 
-	{
-		if (!isInvalid())
-		{
-			if (marks >= 0 && marks < 50) 
-			{
-				return 0.0;
-			}
-			else if (marks >= 50 && marks < 60)
-			{
-				return 1.0;
-			} 
-			else if (marks >= 60 && marks < 70)
-			{	
-				return 2.0;
-			} 
-			else if (marks >= 70 && marks < 80) 
-			{
-				return 3.0;
-			}
-			else if (marks >= 80 && marks <= 100)
-			{
-				return 4.0;
-			}
-		} return 0.0;
-	}
-
-
+	
 	Mark::operator char() 
 	{
 		if (!isInvalid())
@@ -116,6 +87,34 @@ namespace sdds
 	}
 
 
+	Mark::operator double() 
+	{
+		if (!isInvalid())
+		{
+			if (marks >= 0 && marks < 50) 
+			{
+				return 0.0;
+			}
+			else if (marks >= 50 && marks < 60)
+			{
+				return 1.0;
+			} 
+			else if (marks >= 60 && marks < 70)
+			{	
+				return 2.0;
+			} 
+			else if (marks >= 70 && marks < 80) 
+			{
+				return 3.0;
+			}
+			else if (marks >= 80 && marks <= 100)
+			{
+				return 4.0;
+			}
+		} return 0.0;
+	}
+
+	
 	Mark& Mark::operator+=(int i) 
 	{
 		if (!isInvalid())
@@ -129,10 +128,10 @@ namespace sdds
 			{
 				marks = 0;
 			} 
-		}return *this;
+		} return *this;
 	}
 
-
+	
 	Mark& Mark::operator=(int x) 
 	{
 		if (!isInvalid())
@@ -149,7 +148,7 @@ namespace sdds
 		 } return *this;
 	}
 
-
+	
 	int& operator+=(int& l, Mark& Mark) 
 	{
 		if (int(Mark) != -1)
