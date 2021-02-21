@@ -12,7 +12,6 @@
 namespace sdds {
 	class Mark {
 		int marks;
-		void setEmpty();
 	public:
 		Mark();
 		Mark(int Marks);
