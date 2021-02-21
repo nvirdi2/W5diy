@@ -15,7 +15,9 @@ namespace sdds {
 	public:
 		Mark();
 		Mark(int Marks);
-		bool isInvalid();   //if mark is under 0 than there is an invalid state
+		
+		//if mark is under 0 than there is an invalid state
+		bool isInvalid();
 
 		//Type conversion operators
 		operator int();
@@ -23,8 +25,8 @@ namespace sdds {
 		operator char();
 
 		//Binary member operators
-		Mark& operator+=(int i);
 		Mark& operator=(int x);
+		Mark& operator+=(int i);
 	};
 
 	//Binary helper operators
