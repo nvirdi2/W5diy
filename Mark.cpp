@@ -28,14 +28,14 @@ namespace sdds
 
 	Mark::Mark(int mark)
 	{
-		if (mark <= 100 && mark >= 0) 
+		if (mark >= 0 && mark <= 100) 
 		{
 			marks = mark;
 		}
 
 		else
 		{
-			marks = isInvalid();
+			marks = -1;
 		}
 	}
 	
